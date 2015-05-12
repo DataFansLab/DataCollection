@@ -2,42 +2,53 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <!DOCTYPE html>
 
-<div id="nav">
-	<ul id="main-menu" class="sm sm-blue">
-		<li id="home-title">解析主页</li>
-		<li id="menu-item-8"><a
-			href="/DataCollection/page/index-analysis" target='_blank'>主页</a></li>
-		<li id="menu-item-155"><a href="javascript:void(0);">工作平台</a>
-			<ul class="sub-menu">
-				<li><a href="/DataCollection/page/analysis/taskList" target='_blank'>解析任务列表</a></li>
-				<li><a href="/DataCollection/page/qcPrompts/analysis" target='_blank'>QC提示</a></li>
-			</ul></li>
-		<li id="menu-item-144"><a href="javascript:void(0);">工具箱</a>
-			<ul class="sub-menu">
-				<li><a id="analysisProcess" href="#">解析程序</a></li>
-				<li><a href="/DataCollection/page/taskLogs/analysis" target='_blank'>解析日志</a></li>
-				<li><a href="#" target='_blank'>同步数据</a></li>
-				<li><a href="/DataCollection/page/companyList/analysis" target='_blank'>公司代码列表</a></li>
-				<li><a href="/DataCollection/page/qcLog/analysis" target='_blank'>QC日志</a></li>
-				<li><a href="/DataCollection/page/affairsAssign/analysis" target='_blank'>任务分配</a></li>
-			</ul></li>
-		<li id="menu-item-165"><a href="javascript:void(0);">系统规则</a>
-			<ul class="sub-menu">
-				<li><a href="#" target='_blank'>流程图</a></li>
-				<li><a href="/DataCollection/page/analysis/QCRules" target='_blank'>QC规则</a></li>
-			</ul></li>
-		<li id="menu-item-989"><a href="javascript:void(0);">导航页</a>
-			<ul class="sub-menu">
-				<li><a href="/DataCollection" target='_blank'>下载平台首页</a></li>
-				<li id = "analysis_index"><a href="/DataCollection/page/index-analysis" target='_blank'>解析平台首页</a></li>
-				<li><a href="http://disclosure.szse.cn/m/drgg.htm" target='_blank'>深交所文档下载页</a></li>
-				<li><a
-					href="http://www.sse.com.cn/assortment/stock/list/stockdetails/announcement/index.shtml" target='_blank'>上交所文档下载页</a></li>
-				<li><a
-					href="http://stockdata.stock.hexun.com/gszl/s002380.shtml" target='_blank'>Web数据下载页</a></li>
-			</ul></li>
-	</ul>
+<div class="ui fluid seven item large inverted blue menu">
+	<div class="item" style="color: rgb(244, 241, 241); font-weight: bold; font-size: 20px !important;">解析主页</div>
+	<a class="item" href="/DataCollection/page/index-analysis" target='_blank'>主页</a>
+	<div class="ui dropdown item">
+		工作平台 <i class="dropdown icon"></i>
+		<div class="menu">
+			<a class="item" href="/DataCollection/page/analysis/taskList" target='_blank'>解析任务列表</a>
+			<a class="item" href="/DataCollection/page/qcPrompts/analysis" target='_blank'>QC提示</a>
+		</div>
+	</div>
+	<div class="ui dropdown item">
+		工具箱 <i class="dropdown icon"></i>
+		<div class="menu">
+			<a class="item" id="analysisProcess" href="#">解析程序</a> 
+			<a class="item" href="/DataCollection/page/taskLogs/analysis" target='_blank'>解析日志</a>
+			<a class="item" href="#" target='_blank'>同步数据</a> 
+			<a class="item"	href="/DataCollection/page/companyList/analysis" target='_blank'>公司代码列表</a>
+			<a class="item" href="/DataCollection/page/qcLog/analysis" target='_blank'>QC日志</a>
+			<a class="item" href="/DataCollection/page/affairsAssign/analysis" target='_blank'>任务分配</a>
+		</div>
+	</div>
+	<div class="ui dropdown item">
+		系统规则 <i class="dropdown icon"></i>
+		<div class="menu">
+			<a class="item" href="#" target='_blank'>流程图</a> <a class="item"
+				href="/DataCollection/page/analysis/QCRules" target='_blank'>QC规则</a>
+		</div>
+
+	</div>
+	<div class="ui dropdown item">
+		导航页 <i class="dropdown icon"></i>
+		<div class="menu">
+			<a class="item" href="/DataCollection" target='_blank'>下载平台首页</a> <a
+				class="item" href="/DataCollection/page/index-analysis"
+				target='_blank'>解析平台首页</a> <a class="item"
+				href="http://disclosure.szse.cn/m/drgg.htm" target='_blank'>深交所文档下载页</a>
+			<a class="item"
+				href="http://www.sse.com.cn/assortment/stock/list/stockdetails/announcement/index.shtml"
+				target='_blank'>上交所文档下载页</a> <a class="item"
+				href="http://stockdata.stock.hexun.com/gszl/s002380.shtml"
+				target='_blank'>Web数据下载页</a>
+		</div>
+
+	</div>
 </div>
+
+
 <script type="text/javascript">
 $(document).ready(function(){
 	Ext.onReady(function() {
@@ -55,5 +66,8 @@ $(document).ready(function(){
 	});
 	
 });
+$('.ui.dropdown')
+  .dropdown()
+;
 </script>
 <!-- #nav end -->
