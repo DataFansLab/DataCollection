@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>机器人自动发稿</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="content">
+        <h2 class="title">机器人自动发稿系统</h2>
+        <p class="article">
+            <span id="poster">中证网讯&nbsp;&nbsp;&nbsp;</span>
+            <span id="companyName">XXX</span>公司（代码
+            <span id="companyId">0000</span>）发布
+            <span id="postYear">XXXX</span>年
+            <span id="bulletionType">年报</span>（或中报、季报）。报告期内，公司实现营业收入
+            <span id="incoming">_____</span>万元，同比
+            <span id="incomingTrend">上升（或下降）</span>
+            <span id="incomingTrendRate">_____</span> %；利润总额
+            <span id="benefit">_____</span>万元，同比
+            <span id="benefitTrend">上升（或下降）</span>
+            <span id="benefitTrendRate">_____</span> %；归属于母公司股东的净利润
+            <span id="superCompanyBenefit">_____</span>万元；同比
+            <span id="superCompanyBenefitTrend">上升（或下降）</span>
+            <span id="superCompanyBenefitTrendRate">_____</span>%。基本每股收益为
+            <span id="benefitPerStock">_____</span>元，同比
+            <span id="benefitPerStockTrend">上升（或下降）</span>
+            <span id="benefitPerStockTrendRate">_____</span>%。</p>
+    </div>
+    <script>
+    var bulletion = {
+        "合并利润表": {
+            "单位": "元",
+            "币种": "人民币",
+            "内容": [
+                {
+                    "表格列顺序": [
+                        "项目",
+                        "附注七",
+                        "2013年1-6月",
+                        "2012年1-6月"
+                    ]
+                },
+                {
+                    "项目": "一、营业总收入",
+                    "2012年1-6月": "30,722,991,215.82",
+                    "附注七": "34",
+                    "2013年1-6月": "41,390,345,567.72"
+                },
+                {
+                    "项目": "二、营业总成本",
+                    "2012年1-6月": "25,181,340,052.78",
+                    "附注七": "",
+                    "2013年1-6月": "34,674,141,967.70"
+                },
+                {
+                    "项目": "其中:营业成本",
+                    "2012年1-6月": "19,274,445,195.45",
+                    "附注七": "34",
+                    "2013年1-6月": "27,488,879,049.60"
+                },
+                {
+                    "项目": "营业税金及附加",
+                    "2012年1-6月": "3,300,682,282.69",
+                    "附注七": "35",
+                    "2013年1-6月": "4,109,273,223.40"
+                },
+                {
+                    "项目": "销售费用",
+                    "2012年1-6月": "1,238,381,864.65",
+                    "附注七": "36",
+                    "2013年1-6月": "1,431,103,459.29"
+                },
+                {
+                    "项目": "管理费用",
+                    "2012年1-6月": "843,801,467.17",
+                    "附注七": "37",
+                    "2013年1-6月": "1,192,208,746.81"
+                },
+                {
+                    "项目": "财务费用",
+                    "2012年1-6月": "423,712,462.94",
+                    "附注七": "38",
+                    "2013年1-6月": "374,778,641.56"
+                },
+                {
+                    "项目": "资产减值损失",
+                    "2012年1-6月": "100,316,779.88",
+                    "附注七": "39",
+                    "2013年1-6月": "77,898,847.04"
+                },
+                {
+                    "项目": "加:公允价值变动收益/（损失）",
+                    "2012年1-6月": "(2,271,459.04)",
+                    "附注七": "40",
+                    "2013年1-6月": "1,463,937.43"
+                },
+                {
+                    "项目": "投资收益",
+                    "2012年1-6月": "472,950,034.20",
+                    "附注七": "41",
+                    "2013年1-6月": "387,543,470.30"
+                },
+                {
+                    "项目": "其中:对联营企业和合营企业的投资收益",
+                    "2012年1-6月": "422,519,279.65",
+                    "附注七": "41",
+                    "2013年1-6月": "387,628,972.71"
+                },
+                {
+                    "项目": "三、营业利润",
+                    "2012年1-6月": "6,012,329,738.20",
+                    "附注七": "",
+                    "2013年1-6月": "7,105,211,007.75"
+                },
+                {
+                    "项目": "加:营业外收入",
+                    "2012年1-6月": "49,410,165.10",
+                    "附注七": "42",
+                    "2013年1-6月": "55,708,930.55"
+                },
+                {
+                    "项目": "减:营业外支出",
+                    "2012年1-6月": "13,067,915.16",
+                    "附注七": "43",
+                    "2013年1-6月": "27,507,632.79"
+                },
+                {
+                    "项目": "其中:非流动资产处置损失",
+                    "2012年1-6月": "338,257.46",
+                    "附注七": "",
+                    "2013年1-6月": "6,462,168.06"
+                },
+                {
+                    "项目": "四、利润总额",
+                    "2012年1-6月": "6,048,671,988.14",
+                    "附注七": "",
+                    "2013年1-6月": "7,133,412,305.51"
+                },
+                {
+                    "项目": "减:所得税费用",
+                    "2012年1-6月": "1,513,194,352.23",
+                    "附注七": "44",
+                    "2013年1-6月": "1,797,521,006.92"
+                },
+                {
+                    "项目": "五、净利润",
+                    "2012年1-6月": "4,535,477,635.91",
+                    "附注七": "",
+                    "2013年1-6月": "5,335,891,298.59"
+                },
+                {
+                    "项目": "归属于母公司所有者的净利润",
+                    "2012年1-6月": "3,725,085,079.33",
+                    "附注七": "",
+                    "2013年1-6月": "4,556,304,906.89"
+                },
+                {
+                    "项目": "少数股东损益",
+                    "2012年1-6月": "810,392,556.58",
+                    "附注七": "",
+                    "2013年1-6月": "779,586,391.70"
+                },
+                {
+                    "项目": "六、每股收益",
+                    "2012年1-6月": "",
+                    "附注七": "",
+                    "2013年1-6月": ""
+                },
+                {
+                    "项目": "(一)基本每股收益",
+                    "2012年1-6月": "0.34",
+                    "附注七": "47",
+                    "2013年1-6月": "0.41"
+                },
+                {
+                    "项目": "(二)稀释每股收益",
+                    "2012年1-6月": "0.34",
+                    "附注七": "47",
+                    "2013年1-6月": "0.41"
+                },
+                {
+                    "项目": "七、其他综合收益",
+                    "2012年1-6月": "(100,745,281.14)",
+                    "附注七": "48",
+                    "2013年1-6月": "26,119,456.50"
+                },
+                {
+                    "项目": "八、综合收益总额",
+                    "2012年1-6月": "4,434,732,354.77",
+                    "附注七": "",
+                    "2013年1-6月": "5,362,010,755.09"
+                },
+                {
+                    "项目": "归属于母公司所有者的综合收益总额",
+                    "2012年1-6月": "3,624,339,798.19",
+                    "附注七": "",
+                    "2013年1-6月": "4,582,424,363.39"
+                },
+                {
+                    "项目": "归属于少数股东的综合收益总额",
+                    "2012年1-6月": "810,392,556.58",
+                    "附注七": "",
+                    "2013年1-6月": "779,586,391.70"
+                }
+            ],
+            "公告日期": "Sun Jun 30 00:00:00 CST 2013"
+        }
+    };
+
+    var TREND = {
+        UP: 1,
+        DOWN: 2
+    };
+
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    var contentIndex = "内容",
+        bulletionType = ["合并利润表"],
+        content = bulletion[bulletionType[0]][contentIndex];
+
+    /* @param {
+     *        "项目": "归属于少数股东的综合收益总额",
+     *        "2012年1-6月": "810,392,556.58",
+     *        "附注七": "",
+     *        "2013年1-6月": "779,586,391.70"
+     *    }: object
+     * @return { currentValue: "", trend: TREND.UP, trendRate: 34.24 } : object
+     */
+    var getChangeRate = function(obj){
+        var startTime,
+            endTime,
+            foreignValue,
+            currentValue;
+        var change = {};
+
+        for(var key in obj) {
+            if(key.indexOf("年") != -1 || key.indexOf("月") != -1) {
+                var value = key.replace(/[^0-9]/ig,""); 
+                if(startTime == undefined){
+                    startTime = endTime = value;
+                    foreignValue = currentValue = obj[key];
+                    continue;
+                }
+                if(endTime < value) {
+                    endTime = value;
+                    currentValue = obj[key];
+                }
+                if(startTime > value) {
+                    startTime = value;
+                    currentValue = obj[key];
+                }
+            }
+        }
+        change.currentValue = currentValue;
+        currentValue = formatNumber(currentValue);
+        foreignValue = formatNumber(foreignValue);
+
+        if(currentValue >= foreignValue) {
+            change.trend = TREND.UP;
+            change.trendRate = (currentValue - foreignValue) / foreignValue;
+            change.trendRate = formatRate(change.trendRate, 2);
+        } else {
+            change.trend = TREND.DOWN;
+            change.trendRate = (foreignValue - currentValue) / foreignValue;
+            change.trendRate = formatRate(change.trendRate, 2);
+        }
+        return change;
+    }
+    
+    /*
+     * @param "3,445,454,554.54" : string
+     * @return "3445454554.54" : float
+     */
+    var formatNumber = function(str) {
+        str = str.replace(/,/g,"");
+        return parseFloat(str);
+    }
+
+    /*
+     * @param 0.344545455454 : float
+     * @param 3 :  integer
+     * @return 0.344 : float
+     */
+    var formatRate = function(rate, length) {
+        rate = rate * 100;
+        return rate.toFixed(length);;
+    }
+
+    if(content instanceof Array) {
+        for(var index = 0; index < content.length; index ++) {
+            /* {
+            /*        "项目": "归属于少数股东的综合收益总额",
+            /*        "2012年1-6月": "810,392,556.58",
+            /*        "附注七": "",
+            /*        "2013年1-6月": "779,586,391.70"
+            /*    }
+            */
+            var singleItem = content[index];
+            for(var key in singleItem){
+                if(singleItem[key].indexOf("母公司") != -1){
+                    console.log(singleItem);
+                    var change = getChangeRate(singleItem);
+                    console.log(change);
+                    $("superCompanyBenefit").textContent = change.currentValue;
+                    change.trend == TREND.UP ? $("superCompanyBenefitTrend").textContent ="上升" : $("incomingTrend").textContent ="下降";
+                    $("superCompanyBenefitTrendRate").textContent = change.trendRate;
+                    continue;
+                }
+                if(singleItem[key].indexOf("公司") != -1){
+                    continue;
+                }
+                if(singleItem[key].indexOf("净利润") != -1){
+                    console.log(singleItem);
+                    var change = getChangeRate(singleItem);
+                    console.log(change);
+                    $("benefit").textContent = change.currentValue;
+                    change.trend == TREND.UP ? $("benefitTrend").textContent ="上升" : $("benefitTrend").textContent ="下降";
+                    $("benefitTrendRate").textContent = change.trendRate;
+                    continue;
+                }
+                if(singleItem[key].indexOf("营业总收入") != -1){
+                    console.log(singleItem);
+                    var change = getChangeRate(singleItem);
+                    console.log(change);
+                    $("incoming").textContent = change.currentValue;
+                    change.trend == TREND.UP ? $("incomingTrend").textContent ="上升" : $("incomingTrend").textContent ="下降";
+                    $("incomingTrendRate").textContent = change.trendRate;
+                    continue;
+                }
+                if(singleItem[key].indexOf("营业利润") != -1){
+                    console.log(singleItem);
+
+                    continue;
+                }
+                if(singleItem[key].indexOf("基本每股收益") != -1){
+                    console.log(singleItem);
+                    var change = getChangeRate(singleItem);
+                    console.log(change);
+                    $("benefitPerStock").textContent = change.currentValue;
+                    change.trend == TREND.UP ? $("benefitPerStockTrend").textContent ="上升" : $("benefitPerStockTrend").textContent ="下降";
+                    $("benefitPerStockTrendRate").textContent = change.trendRate;
+                    continue;
+                }
+            }
+        }
+    }
+
+    </script>
+</body>
+</html>
+
