@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="downloadProcess" template="/jsp/downloadConsole.jsp"/>
+	<definition name="analysisProcess" template="/jsp/analysisConsole.jsp"/>
+	<definition name="template_download" template="/jsp/template/template.jsp">
+		<put-attribute name="nav" value="/jsp/template/top_download.jsp" />
+		<!-- <put-attribute name="bottom" value="/jsp/template/bottom.jsp"/> -->
+	</definition>
+	<definition name="template_analysis" template="/jsp/template/template.jsp">
+		<put-attribute name="nav" value="/jsp/template/top_analysis.jsp" />
+		<!-- <put-attribute name="bottom" value="/jsp/template/bottom.jsp"/> -->
+	</definition>
+
+	<definition name="qc_prompts_download" extends="template_download">
+		<put-attribute name="title" value="QC提示" />
+		<put-attribute name="content" value="/jsp/qc_prompts.jsp" />
+	</definition>
+
+	<definition name="qc_prompts_analysis" extends="template_analysis">
+		<put-attribute name="title" value="QC提示" />
+		<put-attribute name="content" value="/jsp/qc_prompts.jsp" />
+	</definition>
+
+	<definition name="affairsAssign_download" extends="template_download">
+		<put-attribute name="title" value="任务分配" />
+		<put-attribute name="content" value="/jsp/affairsAssign.jsp" />
+	</definition>
+	<definition name="affairsAssign_analysis" extends="template_analysis">
+		<put-attribute name="title" value="任务分配" />
+		<put-attribute name="content" value="/jsp/affairsAssign.jsp" />
+	</definition>
+
+	<definition name="index-download" extends="template_download">
+		<put-attribute name="title" value="下载主页" />
+		<put-attribute name="content" value="/jsp/index-download.jsp" />
+	</definition>
+
+	<definition name="index-analysis" extends="template_analysis">
+		<put-attribute name="title" value="解析主页" />
+		<put-attribute name="content" value="/jsp/index-analysis.jsp" />
+	</definition>
+
+	<definition name="QCLog_download" extends="template_download">
+		<put-attribute name="title" value="QC日志" />
+		<put-attribute name="content" value="/jsp/QCLogDownload.jsp" />
+	</definition>
+	<definition name="QCLog_analysis" extends="template_analysis">
+		<put-attribute name="title" value="QC日志" />
+		<put-attribute name="content" value="/jsp/QCLogAnalysis.jsp" />
+	</definition>
+
+	<definition name="QCRules_download" extends="template_download">
+		<put-attribute name="title" value="下载QC规则" />
+		<put-attribute name="content" value="/jsp/QCRules.jsp" />
+	</definition>
+	
+	<definition name="QCRules_analysis" extends="template_analysis">
+		<put-attribute name="title" value="解析QC规则" />
+		<put-attribute name="content" value="/jsp/analysis_qc_rules.jsp" />
+	</definition>
+
+	<definition name="QCTips" extends="template_download">
+		<put-attribute name="title" value="QC提示" />
+		<put-attribute name="content" value="/jsp/QCTips.jsp" />
+	</definition>
+
+
+
+	<definition name="upload" extends="template_download">
+		<put-attribute name="title" value="上传文档" />
+		<put-attribute name="content" value="/jsp/upload.jsp" />
+	</definition>
+
+	<definition name="task_logs_download" extends="template_download">
+		<put-attribute name="title" value="下载日志" />
+		<put-attribute name="content" value="/jsp/task_logs.jsp" />
+	</definition>
+
+	<definition name="companyList_download" extends="template_download">
+		<put-attribute name="title" value="公司代码列表" />
+		<put-attribute name="content" value="/jsp/companyList.jsp" />
+	</definition>
+	<definition name="companyList_analysis" extends="template_analysis">
+		<put-attribute name="title" value="公司代码列表" />
+		<put-attribute name="content" value="/jsp/companyList.jsp" />
+	</definition>
+
+	<definition name="companyInfo" extends="template_download">
+		<put-attribute name="title" value="公司综合详情" />
+		<put-attribute name="content" value="/jsp/companyInfo.jsp" />
+	</definition>
+
+	<definition name="task_logs_analysis" extends="template_analysis">
+		<put-attribute name="title" value="解析日志" />
+		<put-attribute name="content" value="/jsp/task_logs.jsp" />
+	</definition>
+
+	<definition name="bulletin_missing" extends="template_download">
+		<put-attribute name="title" value="文档缺失" />
+		<put-attribute name="content" value="/jsp/bulletin_missing.jsp" />
+	</definition>
+
+
+	<definition name="docAnalysis" extends="template_analysis">
+		<put-attribute name="title" value="文档解析页" />
+		<put-attribute name="content" value="/jsp/docAnalysis.jsp" />
+	</definition>
+
+
+	<definition name="analysis_task_list" extends="template_analysis">
+		<put-attribute name="title" value="解析任务列表" />
+		<put-attribute name="content" value="/jsp/analysis_tasks.jsp" />
+	</definition>
+	
+	<definition name="analysis_qc_rules" extends="template_analysis">
+		<put-attribute name="title" value="QC规则"/>
+		<put-attribute name="content" value="/jsp/analysis_qc_rules.jsp"/>
+	</definition>
+
+
+</tiles-definitions>

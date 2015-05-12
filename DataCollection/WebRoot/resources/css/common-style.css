@@ -1,0 +1,91 @@
+@CHARSET "UTF-8";
+
+/*
+2014-02-18 pm. by nano
+*/
+
+html, body, h1, h2, h3, h4, p, ul, ol, li, form, input, select, dl, dt, dd, fieldset, blockquote, label, span, div{
+	margin:0px;
+	padding:0px;
+	font-family: Microsoft YaHei !important;
+	font-size: 14px !important;
+}
+
+body {
+	color:#fff;	
+	/*background:#fbf3e8 url(images/content_pattern.png) repeat 50% 0;*/
+}
+
+.container {
+	width: 1100px;
+	min-height: 750px;
+	margin: 0 auto;
+	background-color: #fff;
+	border:1px solid #ddd;
+	border-radius: 6px;
+	/*background-color:#f5f5f5;*/	
+	padding: 10px 10px 10px 10px;
+}
+
+.top {
+	padding:20px 0px 0px 0px;
+	width:1078px;
+	margin:0px;
+	/*background: -moz-linear-gradient( top, #cbdbef, #fff);
+	background: -ms-linear-gradient( top, #cbdbef, #fff);
+	background: -webkit-linear-gradient( top, #cbdbef, #fff);*/
+}
+
+#nav {
+	width:1078px;
+	margin: 20px 0px 0px 0px;
+	padding:0px;
+}
+
+
+.content {
+	width:1078px;
+	margin: 20px 0px 10px 0px;
+	min-height: 600px;
+	/*background: #fffaf4;*/
+	background:#F9F9F9;
+	border: 1px dashed #dedede;
+	padding: 10px 0px 10px 0px;
+}
+
+#conditions {
+	margin: 10px auto;
+}
+
+#results {
+	margin: 20px auto;
+}
+
+/* extra setting for ext js */
+
+.x-panel-header-text {
+	font-size: 16px !important;
+	font-weight: normal;
+}
+
+#form-1009-targetEl > .x-form-item {
+	margin-right: 20px;
+	vertical-align: center;
+}
+
+.x-form-item label {
+	margin-top: 2px;
+}
+
+.x-grid-cell-inner, .x-grid-hd-inner { 
+	white-space:normal !important; 
+} 
+
+.home-grid-important-cell {
+	background-color: #FCF5A5 !important;
+	color: red !important;
+}
+
+.delay-day {
+	background-color: #E6E5DF !important;
+}

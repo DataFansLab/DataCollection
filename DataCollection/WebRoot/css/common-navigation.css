@@ -1,0 +1,286 @@
+	/*--[ҳ�湫�����ݵ���ʽ�?�磺������ҳ�汳���ȵ�]--*/
+	
+	body{
+		width:100%;		
+	}
+	
+
+	
+	.main_container{
+		background:url(../image/bg.png) repeat 0 0;
+		margin: 0 auto;
+		width:1100px;
+		height:700px;
+		border:solid white 1px;		
+		box-shadow: 10px 10px 5px #888888;
+	}
+
+	.top_container{
+		width:1100px; 
+		height: 100px; 
+		border-bottom:1px solid #99bce8;
+	}
+
+	.title{
+		width:150px; 
+		height: 30px;  
+		padding-top:36px; 
+		padding-left:80px; 
+		font-size:25px;  
+		font-family:Microsoft YaHei;
+		font-weight:900;
+		color:#ccc;
+		color:#ff9834;
+	}
+	
+	.navigation_pos{
+		margin: 0 100px 0 auto;
+		width:55%;
+		z-index:999999;
+	}
+	
+	.imatm {
+		width:20%;
+	}
+	
+	ul ul li{
+		height:25px;
+	}
+	
+    .imcm ul,
+    .imcm li,
+    .imcm div,
+    .imcm span,
+    .imcm a{
+        text-align:left;
+        vertical-align:top;
+        padding:0px;
+        margin:0;
+        list-style:none outside none;
+        border-style:none;
+        background-image:none;
+        clear:none;
+        float:none;
+        display:block;
+        position:static;
+        overflow:visible;
+        line-height:normal;
+    }
+    .imcm li a img{
+        display:inline;
+        border-width:0px;
+    }
+    .imcm span{
+        display:inline;
+    }
+    .imcm .imclear,.imclear{
+        clear:both;
+        height:0px;
+        visibility:hidden;
+        line-height:0px;
+        font-size:1px;
+    }
+    .imcm .imsc{
+        position:relative;
+    }
+    .imcm .imsubc{
+        position:absolute;
+        visibility:hidden;
+    }
+    .imcm li{
+        list-style:none;
+        font-size:1px;
+        float:left;
+    }
+    .imcm ul ul li{
+        width:100%;
+        float:none !important;
+    }
+    .imcm a{
+        display:block;
+        position:relative;
+    }
+    .imcm ul .imsc,.imcm ul .imsubc {
+        z-index:10;
+    }
+    .imcm ul ul .imsc,.imcm ul ul .imsubc{
+        z-index:20;
+    }
+    .imcm ul ul ul .imsc,.imcm ul ul ul .imsubc{
+        z-index:30;
+    }
+    .imde ul li:hover .imsubc{
+        visibility:visible;
+    }
+    .imde ul ul li:hover  .imsubc{
+        visibility:visible;
+    }
+    .imde ul ul ul li:hover  .imsubc{
+        visibility:visible;
+    }
+    .imde li:hover ul  .imsubc{
+        visibility:hidden;
+    }
+    .imde li:hover ul ul .imsubc{
+        visibility:hidden;
+    }
+    .imde li:hover ul ul ul  .imsubc{
+        visibility:hidden;
+    }
+    .imcm .imea{
+        display:block;
+        position:relative;
+        left:0px;
+        font-size:1px;
+        line-height:1px;
+        height:0px;
+        width:1px;
+        float:right;
+    }
+    .imcm .imea span{
+        display:block;
+        position:relative;
+        font-size:1px;
+        line-height:0px;
+    }
+    .dvs,.dvm{
+        border-width:0px
+    }
+    /*\*//*/.imcm .imea{visibility:hidden;}/**/  
+
+	/* --[[ Main Expand Icons ]]-- */
+	#imenus0 .imeam span,#imenus0 .imeamj span {
+        background-image:url(../image/sample3_main_arrow.gif);
+        width:7px;
+        height:5px;
+        left:-8px;
+        top:5px;
+        background-repeat:no-repeat;
+        background-position:top left;
+    }
+	#imenus0 li:hover .imeam span,#imenus0 li a.iactive .imeamj span {
+        background-image:url(../image/sample3_main_arrow.gif);
+        background-repeat:no-repeat;background-position:top left;
+    }
+
+
+	/* --[[ Sub Expand Icons ]]-- */
+	#imenus0 ul .imeas span,#imenus0 ul .imeasj span {
+        background-image:url(../image/arrow_sub.gif);
+        width:10px; height:13px; left:-10px; top:0px;
+        background-repeat:no-repeat;background-position:top left;
+    }
+	#imenus0 ul li:hover .imeas span,#imenus0 ul li a.iactive .imeasj span {
+        background-image:url(../image/arrow_sub.gif);
+        background-repeat:no-repeat;background-position:top left;        
+    }
+
+
+	/* --[[ Main Container ]]-- */
+	#imouter0 {
+        background-color:#d3e1f1;
+        border-style:solid;
+        border-color:#99bce8;
+        border-width:1px;
+        padding:0px;
+        margin:0px;                
+    }
+
+
+	/* --[[ Sub Container ]]-- */
+	#imenus0 li ul {
+        background-color:#fff;
+        border-style:solid;
+        border-color:#99bce8;
+        border-width:1px;
+        padding:5px;
+        
+    }
+
+
+	/* --[[ Main Items ]]-- */
+	#imenus0 li a, #imenus0 .imctitle {
+        color:#04408c;
+        text-align:center;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        text-decoration:none;
+        border-style:solid;
+        border-color:#99bce8;
+        border-width:0px;
+        border-left-width:1px;        
+        padding:4px 5px 4px 12px;
+    }
+
+		/* [hover] - These settings must be duplicated for IE compatibility.*/
+		#imenus0 li:hover>a {
+            background-color:#fff;
+            color:#ff9834;
+        }
+		#imenus0 li a.ihover,
+        .imde  a:hover {
+            background-color:#cce3f8;
+            color:#111111;
+        }
+
+		/* [active] */
+		#imenus0 li a.iactive {
+            background-color:#cce3f8;
+            color:#111111;
+        }
+
+
+	/* --[[ Sub Items ]]-- */
+	#imenus0 ul a, #imenus0 .imsubc li .imctitle  {
+        color:#111111;
+        text-align:left;
+        font-size:13px;
+        font-weight:normal;
+        text-decoration:none;
+        border-style:none;
+        border-color:#000000;
+        border-width:1px;
+        padding:2px 5px;
+    }
+
+		/* [hover] - These settings must be duplicated for IE comptatibility.*/
+		#imenus0 ul li:hover>a {background-color:#ff9834; color:#fff; }
+		#imenus0 ul li a.ihover {background-color:#ffffff; color:#255585; }
+
+		/* [active] */
+		#imenus0 ul li a.iactive {background-color:#ffffff; color:#255585; }
+		
+		#bottom_container{
+			width: 100%;
+			height: 65px;
+			margin-bottom: 5px;
+			background-color:#ccc;
+			font-family:Microsoft YaHei;
+			font-weight:bold;
+			color:#fff;
+		}
+		
+		#bottom_container p {
+			text-align:center;
+			padding-top: 10px;
+		}
+		
+		.content {
+			min-height: 550px;
+		}
+		
+		#conditions {
+			min-height: 50px;
+			margin: 0px auto;
+			padding: 10px 30px 10px 30px;
+			background-color: whitesmoke;
+		}
+		
+		#results {
+			padding: 30px 30px 10px 30px;
+		}
+		
+		.button_delete {
+			background: url(/DataCollection/image/delete.gif) left top no-repeat !important; 
+		}
