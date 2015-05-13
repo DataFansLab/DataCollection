@@ -56,7 +56,7 @@ public class UtilController {
 	            //处理年份
 	            if (result.contains("年")) {
 	            	int i = result.indexOf("年");
-	            	String sub = result.substring(i - 10, i);
+	            	String sub = result.substring((i - 10 < 0) ? 0 : (i - 10), i);
 	            	object.put("year", sub.substring(sub.indexOf("2"), sub.indexOf("2") + 4));
 	            } else object.put("year", "null");
 	            //处理报表类型
@@ -77,7 +77,7 @@ public class UtilController {
 	            //处理公司名称
 	            if (result.contains("有限公司")) {
 	                int i = result.indexOf("有限公司");
-	                object.put("company", result.substring(result.substring(0, i).lastIndexOf("\n") + 1, i + 2));
+	                object.put("company", result.substring(result.substring(0, i).lastIndexOf("\n") + 1, i + 4));
 	            } else object.put("company", "null");
 
 	            in.close();
