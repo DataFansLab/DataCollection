@@ -302,4 +302,9 @@ public class PageRequestController {
 	public String showAutoReportPage() {
 		return "auto-report";
 	}
+	
+	@RequestMapping(value="/reportGenerating")
+	public String showreportGeneratingPage() {
+		return "report-generating";
+	}
 }

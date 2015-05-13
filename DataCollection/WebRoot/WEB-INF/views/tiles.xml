@@ -121,9 +121,14 @@
 		<put-attribute name="content" value="/jsp/analysis_qc_rules.jsp"/>
 	</definition>
 
-	<definition name="auto-report" extends="template_analysis">
+ 	<definition name="auto-report" extends="template_analysis">
 		<put-attribute name="title" value="自动发稿" />
 		<put-attribute name="content" value="/jsp/autoReport.jsp" />
+	</definition>
+	
+	<definition name="report-generating" extends="template_analysis">
+		<put-attribute name="title" value="自动发稿" />
+		<put-attribute name="content" value="/jsp/reportGenerating.jsp" />
 	</definition>
 
 </tiles-definitions>
