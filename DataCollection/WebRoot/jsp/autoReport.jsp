@@ -19,6 +19,7 @@
 	<div class="ui left aligned vertical segment" style="padding-left: 30px; padding-right: 30px;">
 		<input class="ui primary button" type="button" value="开始解析" style="margin-right: 30px; font-size: 15px;"
 			id="analysis"><div class="ui active inline loader" style="display: none;" id="loader"></div>
+			<div id="info"></div>
 			<h2 class="ui header">资产负债表</h2>
 			<div id="fuzhai"></div>
 			<h2 class="ui header">利润表</h2>
@@ -41,8 +42,14 @@
   									$('#loader').css('display', 'none');
   									
   									if (data != "") {
+  										//to localStorage
+  										localStorage["caiji_data"] = data;
+  									
   										var json = $.parseJSON(data);
-									
+										
+										$('#info').html('<table class="ui celled three column table" style="margin-top: 30px;"><thead><tr><th>公司名称</th><th>股票代码</th><th>报告类型</th></tr></thead>' +
+										'<tbody><tr><td>' + json.company + '</td><td>' + json.code + '</td><td>' + json.date + '</td></tr></tbody></table>');
+										
 										addTable(json.fuzhai.内容[0].表格列顺序, json.fuzhai.内容, 'fuzhai');
 										addTable(json.lirun.内容[0].表格列顺序, json.lirun.内容, 'lirun');
 										addTable(json.xianjin.内容[0].表格列顺序, json.xianjin.内容, 'xianjin');
@@ -73,7 +80,7 @@
 
 					});
 		function addTable(header, content, name) {
-			var table = '<table class="ui celled definition table"><thead>';
+			var table = '<table class="ui celled three column definition table"><thead>';
 			table += '<tr>';
 			$.each(header, function(index, element) {
 				table += '<th>' + element + '</th>';
