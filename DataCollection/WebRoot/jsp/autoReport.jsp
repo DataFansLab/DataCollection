@@ -48,7 +48,7 @@
   										var json = $.parseJSON(data);
 										
 										$('#info').html('<table class="ui celled three column table" style="margin-top: 30px;"><thead><tr><th>公司名称</th><th>股票代码</th><th>报告类型</th></tr></thead>' +
-										'<tbody><tr><td>' + json.company + '</td><td>' + json.code + '</td><td>' + json.date + '</td></tr></tbody></table>');
+										'<tbody><tr><td>' + json.company + '</td><td>' + json.code + '</td><td>' + json.year + '年' + json.type + '</td></tr></tbody></table>');
 										
 										addTable(json.fuzhai.内容[0].表格列顺序, json.fuzhai.内容, 'fuzhai');
 										addTable(json.lirun.内容[0].表格列顺序, json.lirun.内容, 'lirun');

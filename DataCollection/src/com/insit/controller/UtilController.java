@@ -53,16 +53,22 @@ public class UtilController {
 	            String result = stripper.getText(doc);
 
 //	            JSONObject info = new JSONObject();
-	            //处理时间
+	            //处理年份
+	            if (result.contains("年")) {
+	            	int i = result.indexOf("年");
+	            	String sub = result.substring(i - 10, i);
+	            	object.put("year", sub.substring(sub.indexOf("2"), sub.indexOf("2") + 4));
+	            } else object.put("year", "null");
+	            //处理报表类型
 	            if (result.contains("一季度报告"))
-	            	object.put("date", "一季度报告");
+	            	object.put("type", "第一季度报告");
 	            else if (result.contains("三季度报告"))
-	            	object.put("date", "三季度报告");
+	            	object.put("type", "第三季度报告");
 	            else if (result.contains("年度报告"))
-	            	object.put("date", "年度报告");
+	            	object.put("type", "年度报告");
 	            else if (result.contains("半年度报告"))
-	            	object.put("date", "半年度报告");
-	            else object.put("date", "null");
+	            	object.put("type", "半年度报告");
+	            else object.put("type", "null");
 	            //处理股票代码
 	            if (result.contains("代码")) {
 	                int i = result.indexOf("代码");
