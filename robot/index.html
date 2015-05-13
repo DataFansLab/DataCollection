@@ -7,15 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="header">
+        <button id="edit">编辑</button>
+        <button id="save">保存</button>
+    </div>
     <div id="content">
         <h2 class="title">机器人自动发稿系统</h2>
-        <p class="article">
+        <p id="article">
             <span id="poster">中证网讯&nbsp;&nbsp;&nbsp;</span>
             <span id="companyName">XXX</span>公司（代码
             <span id="companyId">0000</span>）发布
             <span id="postYear">XXXX</span>年
             <span id="bulletionType">年报</span>（或中报、季报）。报告期内，公司实现营业收入
-            <span id="incoming">_____</span>万元，同比
+            <span id="incoming" >_____</span>万元，同比
             <span id="incomingTrend">上升（或下降）</span>
             <span id="incomingTrendRate">_____</span> %；利润总额
             <span id="benefit">_____</span>万元，同比
@@ -218,6 +222,16 @@
         return document.getElementById(id);
     }
 
+    $("edit").addEventListener("click", function(){
+        $("article").setAttribute("contenteditable","true");
+        $("article").setAttribute("class","paramFocus");
+    });
+
+    $("save").addEventListener("click", function(){
+        $("article").setAttribute("contenteditable","false");
+        $("article").setAttribute("class","");
+    });
+
     var contentIndex = "内容",
         bulletionType = ["合并利润表"],
         content = bulletion[bulletionType[0]][contentIndex];
@@ -273,7 +287,7 @@
     
     /*
      * @param "3,445,454,554.54" : string
-     * @return "3445454554.54" : float
+     * @return 3445454554.54 : float
      */
     var formatNumber = function(str) {
         str = str.replace(/,/g,"");
@@ -293,12 +307,12 @@
     if(content instanceof Array) {
         for(var index = 0; index < content.length; index ++) {
             /* {
-            /*        "项目": "归属于少数股东的综合收益总额",
-            /*        "2012年1-6月": "810,392,556.58",
-            /*        "附注七": "",
-            /*        "2013年1-6月": "779,586,391.70"
-            /*    }
-            */
+             *        "项目": "归属于少数股东的综合收益总额",
+             *        "2012年1-6月": "810,392,556.58",
+             *        "附注七": "",
+             *        "2013年1-6月": "779,586,391.70"
+             *    }
+             */
             var singleItem = content[index];
             for(var key in singleItem){
                 if(singleItem[key].indexOf("母公司") != -1){
