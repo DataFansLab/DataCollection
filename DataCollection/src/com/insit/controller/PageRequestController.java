@@ -297,4 +297,9 @@ public class PageRequestController {
 		
 		return mav;
 	}
+	
+	@RequestMapping(value="/autoReport")
+	public String showAutoReportPage() {
+		return "auto-report";
+	}
 }

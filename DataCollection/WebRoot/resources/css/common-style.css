@@ -8,7 +8,7 @@ html, body, h1, h2, h3, h4, p, ul, ol, li, form, input, select, dl, dt, dd, fiel
 	margin:0px;
 	padding:0px;
 	font-family: Microsoft YaHei !important;
-	font-size: 14px !important;
+	/*font-size: 14px !important;*/
 }
 
 body {

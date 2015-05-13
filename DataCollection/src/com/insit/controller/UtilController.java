@@ -4,11 +4,15 @@
  */
 package com.insit.controller;
 
+import net.sf.json.JSONObject;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import bupt.extract.example.MainProcess;
 
 import com.insit.util.RPCClient;
 
@@ -21,6 +25,23 @@ import com.insit.util.RPCClient;
 @Controller
 @RequestMapping("/util")
 public class UtilController {
+	public static String uploadedFilePath = "";
+	
+	@RequestMapping(value = "/analysisPdf", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
+	@ResponseBody
+	public String analysisPdf() {
+		String response = "";
+		if (!uploadedFilePath.equals("")) {
+			String[] three_tables = new MainProcess().getPDFFormBulletin(uploadedFilePath);
+			JSONObject object = new JSONObject();
+			object.put("fuzhai", JSONObject.fromObject(three_tables[0]));
+			object.put("lirun", JSONObject.fromObject(three_tables[1]));
+			object.put("xianjin", JSONObject.fromObject(three_tables[2]));
+			response = object.toString();
+		}
+		
+		return response;
+	}
 
 	@RequestMapping(value = "/downloadProcess/{operation}", method = RequestMethod.GET, produces = "text/html;charset=UTF-8")
 	@ResponseBody

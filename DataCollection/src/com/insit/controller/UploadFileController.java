@@ -4,6 +4,7 @@
  */
 package com.insit.controller;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -13,7 +14,6 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import net.sf.json.JSONObject;
@@ -21,9 +21,9 @@ import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.insit.dao.IBaseHibernateDAO;
@@ -45,6 +45,26 @@ public class UploadFileController {
 	@Autowired
 	public void setDAO(IBaseHibernateDAO dao) {
 		this.dao = dao;
+	}
+	
+	@RequestMapping(value="/tmp")
+	public @ResponseBody String uploadPdfFile(@RequestParam("file") MultipartFile file){
+		String result = "";
+		if (!file.isEmpty()) {
+			try {
+                byte[] bytes = file.getBytes();
+                String fileName = "F:\\pdf_upload\\" + System.currentTimeMillis() + ".pdf";
+                BufferedOutputStream stream =
+                        new BufferedOutputStream(new FileOutputStream(new File(fileName)));
+                stream.write(bytes);
+                stream.close();
+                result = "yes!";
+                UtilController.uploadedFilePath = fileName;
+            } catch (Exception e) {
+            	result = "no! => " + e.getMessage();
+            }
+		}
+		return result;
 	}
 	
 	@RequestMapping(value="/pdf")
