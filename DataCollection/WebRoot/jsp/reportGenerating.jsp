@@ -67,9 +67,9 @@
         <button id="save">保存</button>
     </div>
     <div id="content">
-        <h2 class="title">机器人自动发稿系统</h2>
+        <h2 class="title">报告自动化生成系统</h2>
         <p id="article">
-            <span id="poster">中证网讯&nbsp;&nbsp;&nbsp;</span>
+            <!--  <span id="poster">中证网讯&nbsp;&nbsp;&nbsp;</span> -->
             <span id="companyName">&nbsp;&nbsp;</span>公司（代码
             <span id="companyId">&nbsp;&nbsp;</span>）发布
             <span id="postYear">&nbsp;&nbsp;</span>年

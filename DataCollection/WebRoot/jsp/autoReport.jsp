@@ -19,7 +19,7 @@
 	<div class="ui left aligned vertical segment" style="padding-left: 30px; padding-right: 30px;">
 		<input class="ui primary button" type="button" value="开始解析" style="margin-right: 30px; font-size: 15px;"
 			id="analysis"><div class="ui active inline loader" style="display: none;" id="loader"></div>
-		<input class="ui primary button" type="button" value="生成稿件" style="margin-right: 30px; font-size: 15px;"
+		<input class="ui primary button" type="button" value="生成报告" style="margin-right: 30px; font-size: 15px;"
 			id="generate">
 			</div>
 			<div id="info"></div>

@@ -10,7 +10,7 @@
 		<div class="menu">
 			<a class="item" href="/DataCollection/page/analysis/taskList" target='_blank'>解析任务列表</a>
 			<a class="item" href="/DataCollection/page/qcPrompts/analysis" target='_blank'>QC提示</a>
-			<a class="item" href="/DataCollection/page/autoReport" target='_blank'>自动发稿</a>
+			<a class="item" href="/DataCollection/page/autoReport" target='_blank'>自动生成报告</a>
 		</div>
 	</div>
 	<div class="ui dropdown item">
