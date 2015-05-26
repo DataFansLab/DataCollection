@@ -1,38 +1,21 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 
     <style>
-    html {
-    font-size: 62.5%;
-	}
-	
-	body {
-	    margin: 0;
-	    padding: 5rem 0;
-	    background: #f2f6f8;
-	}
 	
 	#header {
 	    margin-bottom: 2rem;
 	    text-align: center;
+	    margin-top: .7rem;
 	}
-	#header button {
-	    transition-duration: .4s;
-	    margin: 0 1rem;
-	    color: #ffffff;
-	    border: none;
-	    border-radius: 4px;
-	    padding: .8rem 2rem;
-	    cursor: pointer;
-	    background-color: #3b83c0;
-	    font-weight: 700;
-	    opacity: 1;
+	#header .ui.button {
+		font-size: 1.1rem;
 	}
-	button:hover {
-	    background-color: #458ac6 !important;
-	    opacity: .6 !important;
+	#header .ui.button:first-child {
+		margin-right: 2rem;
 	}
 	
 	#content {
+		font-size: 92.5% !important;
 	    box-sizing: border-box;
 	    width: 595px;
 	    height: 842px;
@@ -60,11 +43,11 @@
 	    border: solid 1px #8dceff !important;
 	}
     
-    </style>
+    </style> 
 <div class="ui segment" style="background-color: #F0F0F0;">
     <div id="header">
-        <button id="edit">编辑</button>
-        <button id="save">保存</button>
+        <div class="ui primary button" id="edit">编辑</div>
+        <div class="ui primary button" id="save">保存</div>
     </div>
     <div id="content">
         <h2 class="title">报告自动化生成系统</h2>
@@ -101,18 +84,15 @@
         bulletionType = "lirun",
         content = DATA[bulletionType][contentIndex];
 
-    function $(id) {
-        return document.getElementById(id);
-    }
 
-    $("edit").addEventListener("click", function(){
-        $("article").setAttribute("contenteditable","true");
-        $("article").setAttribute("class","paramFocus");
+    $("#edit").click(function(){
+        $("#article").attr("contenteditable","true");
+        $("#article").attr("class","paramFocus");
     });
 
-    $("save").addEventListener("click", function(){
-        $("article").setAttribute("contenteditable","false");
-        $("article").setAttribute("class","");
+    $("#save").click(function(){
+        $("#article").attr("contenteditable","false");
+        $("#article").attr("class","");
     });
 
     /* @param {
@@ -146,7 +126,12 @@
                     startTime = value;
                     currentValue = obj[key];
                 }
-            }
+            }else if(key.indexOf("本期") != -1) {
+              
+                    currentValue = obj[key];
+
+            } else if (key.indexOf("上期") != -1) {foreignValue = obj[key];}
+            
         }
         change.currentValue = currentValue;
         currentValue = formatNumber(currentValue);
@@ -169,6 +154,7 @@
      * @return 3445454554.54 : float
      */
     var formatNumber = function(str) {
+    	if (!str) return;
         str = str.replace(/,/g,"");
         return parseFloat(str);
     }
@@ -183,21 +169,22 @@
         return rate.toFixed(length);;
     }
 
-    var getItemValues = function(item) {
+    var getItemValues = function(item, singleItem) {
+    	console.info(singleItem);
         var change = getChangeRate(singleItem);
-        $(item).textContent = change.currentValue;
-        change.trend == TREND.UP ? $(item+ "Trend").textContent ="上升" : $(item + "Trend").textContent ="下降";
-        $(item+ "TrendRate").textContent = change.trendRate;
+        $('#' + item).html(change.currentValue);
+        change.trend == TREND.UP ? $('#' + item+ "Trend").html("上升") : $('#' + item + "Trend").html("下降");
+        $('#' + item+ "TrendRate").html(change.trendRate);
     }
 
     if(DATA.company != null && DATA.company != "null")
-        $("companyName").textContent = DATA.company;
+        $("#companyName").html(DATA.company);
     if(DATA.year != null && DATA.year != "null")
-        $("postYear").textContent = DATA.year;
+        $("#postYear").html(DATA.year);
     if(DATA.code != null && DATA.code != "null")
-        $("companyId").textContent = DATA.code;
+        $("#companyId").html(DATA.code);
     if(DATA.type != null && DATA.type != "null")
-        $("bulletionType").textContent = DATA.type;
+        $("#bulletionType").html(DATA.type);
 
     if(content instanceof Array) {
         for(var index = 0; index < content.length; index ++) {
@@ -208,19 +195,19 @@
                     if(singleItem[key].indexOf("净利润") == -1)
                         continue;
 
-                    getItemValues("superCompanyBenefit");
+                    getItemValues("superCompanyBenefit", singleItem);
                     continue;
                 }
                 if(singleItem[key].indexOf("净利润") != -1){
-                    getItemValues("benefit");
+                    getItemValues("benefit", singleItem);
                     continue;
                 }
                 if(singleItem[key].indexOf("营业总收入") != -1){
-                    getItemValues("incoming");
+                    getItemValues("incoming", singleItem);
                     continue;
                 }
                 if(singleItem[key].indexOf("基本每股收益") != -1){
-                    getItemValues("benefitPerStock");
+                    getItemValues("benefitPerStock", singleItem);
                     continue;
                 }
             }

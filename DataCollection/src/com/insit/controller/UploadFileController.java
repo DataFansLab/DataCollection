@@ -53,7 +53,7 @@ public class UploadFileController {
 		if (!file.isEmpty()) {
 			try {
                 byte[] bytes = file.getBytes();
-                String fileName = "F:\\pdf_upload\\" + System.currentTimeMillis() + ".pdf";
+                String fileName = "/var/data-collection/" + System.currentTimeMillis() + ".pdf";
                 BufferedOutputStream stream =
                         new BufferedOutputStream(new FileOutputStream(new File(fileName)));
                 stream.write(bytes);

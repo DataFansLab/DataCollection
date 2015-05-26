@@ -9,7 +9,7 @@
 <meta http-equiv="Expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<script src="/DataCollection/js/jquery/jquery.js"></script>
+<script src="/DataCollection/js/jquery/jquery-1.11.3.min.js"></script>
 
 <link rel="shortcut icon"
 	href="/DataCollection/resources/icon/favicon.ico" type="image/x-icon" />
@@ -27,11 +27,11 @@
 	
 <title><tiles:getAsString name="title" /></title>
 <script type="text/javascript">
-$(document).ready(function() {
+/*$(document).ready(function() {
 	$(window).bind('beforeunload', function() {
 		return '您可能有数据没有保存';
 	});
-});
+});*/
 </script>
 </head>
 <body>
